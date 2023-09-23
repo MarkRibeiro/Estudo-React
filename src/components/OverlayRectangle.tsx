@@ -27,10 +27,8 @@ const OverlayRectangle: React.FC<OverlayRectangleProps> = ({
   children,
   active,
 }) => {
-  // Use uma variável local para controlar a visibilidade
   const visibility = active ? "visible" : "hidden";
 
-  // Aplique a variável ao estilo
   const updatedStyle: React.CSSProperties = {
     ...overlayStyle,
     visibility,

@@ -4,7 +4,7 @@ type BotaoProps = {
   texto: string;
   onClick: () => void;
   largura: string;
-  className?: string; // Permita que a propriedade className seja opcional
+  className?: string;
 };
 
 const Botao: React.FC<BotaoProps> = ({
@@ -16,7 +16,7 @@ const Botao: React.FC<BotaoProps> = ({
   const botaoStyle = {
     backgroundColor: "black",
     height: "40px",
-    width: largura, // Use a largura passada como props
+    width: largura,
     fontSize: "20px",
     color: "white",
     border: "none",
@@ -25,11 +25,7 @@ const Botao: React.FC<BotaoProps> = ({
   };
 
   return (
-    <button
-      className={className} // Passe a propriedade className para o elemento <button>
-      onClick={onClick}
-      style={botaoStyle}
-    >
+    <button className={className} onClick={onClick} style={botaoStyle}>
       {texto}
     </button>
   );

@@ -6,11 +6,10 @@ interface TextoProps {
 
 const estiloTexto: React.CSSProperties = {
   fontSize: "24px",
-  textAlign: "center", // Centraliza horizontalmente
+  textAlign: "center",
 };
 
 const Texto: React.FC<TextoProps> = ({ texto }) => {
-  // Função para processar o texto e aplicar negrito
   const processarTexto = (texto: string) => {
     const partes = texto.split("**");
     return partes.map((parte, index) => {

@@ -28,7 +28,7 @@ import botaoImagensImage from "./imgs/botaoImagensImage.png";
 const App: React.FC = () => {
   const [isRectangleActive1, setRectangle1Active] = useState(false);
   const [isRectangleActive2, setRectangle2Active] = useState(false);
-  const [isRectangleActive3, setRectangle3Active] = useState(true);
+  const [isRectangleActive3, setRectangle3Active] = useState(false);
 
   const handleShowRectangle1Click = () => {
     setRectangle1Active(true);
@@ -157,8 +157,6 @@ const App: React.FC = () => {
         <Espaco altura="20px" />
         <Imagem src={botaoImagensImage} altura="36px" largura="124px" />
       </OverlayRectangle>
-
-      {/* Outro OverlayRectangle aqui */}
 
       {isRectangleActive2 && <BackgroundOverlay />}
       <OverlayRectangle active={isRectangleActive2}>

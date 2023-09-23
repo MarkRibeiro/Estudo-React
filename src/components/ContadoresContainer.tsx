@@ -10,12 +10,12 @@ const ContadoresContainer: React.FC<ContadoresContainerProps> = ({
 }) => {
   const containerStyle: React.CSSProperties = {
     display: "flex",
-    justifyContent: "center", // Centraliza horizontalmente
-    alignItems: "center", // Centraliza verticalmente
+    justifyContent: "center",
+    alignItems: "center",
   };
 
   const contadorWrapperStyle: React.CSSProperties = {
-    marginRight: "29px", // Aplica a margem entre os contadores
+    marginRight: "29px",
   };
 
   return (
@@ -23,11 +23,7 @@ const ContadoresContainer: React.FC<ContadoresContainerProps> = ({
       {contadores.map((contador, index) => (
         <div
           key={index}
-          style={
-            index === contadores.length - 1
-              ? {} // Remove a margem no último elemento
-              : contadorWrapperStyle
-          }
+          style={index === contadores.length - 1 ? {} : contadorWrapperStyle}
         >
           <Contador imagemSrc={contador.imagemSrc} numero={contador.numero} />
         </div>

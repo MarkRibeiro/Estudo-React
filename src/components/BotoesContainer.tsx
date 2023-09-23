@@ -19,7 +19,7 @@ const BotoesContainer: React.FC<BotoesContainerProps> = ({ botoes }) => {
   };
 
   const botaoWrapperStyle: React.CSSProperties = {
-    marginRight: "30px", // Aplica a margem entre os botões
+    marginRight: "30px",
   };
 
   return (
@@ -27,11 +27,7 @@ const BotoesContainer: React.FC<BotoesContainerProps> = ({ botoes }) => {
       {botoes.map((botao, index) => (
         <div
           key={index}
-          style={
-            index === botoes.length - 1
-              ? {} // Remove a margem no último elemento
-              : botaoWrapperStyle
-          }
+          style={index === botoes.length - 1 ? {} : botaoWrapperStyle}
         >
           <Botao
             texto={botao.texto}

@@ -1,8 +1,8 @@
 import React from "react";
 
 type LinhaProps = {
-  comprimento: string; // Porcentagem de comprimento da linha (ex: "80%")
-  cor: string; // Cor da linha (ex: "black", "#FF0000", "rgb(0, 0, 255)")
+  comprimento: string;
+  cor: string;
   marginTop: string;
 };
 
