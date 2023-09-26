@@ -1,25 +1,29 @@
 import React from "react";
 import Botao from "./Botao";
 
-type BotoesContainerProps = {
+type BotoesContainerVProps = {
   botoes: Array<{
     texto: string;
     onClick: () => void;
     largura: string;
+    corTexto: string;
+    corCaixa: string;
   }>;
 };
 
-const BotoesContainer: React.FC<BotoesContainerProps> = ({ botoes }) => {
-  const containerStyle = {
+const BotoesContainerV: React.FC<BotoesContainerVProps> = ({ botoes }) => {
+  const containerStyle: React.CSSProperties = {
     display: "flex",
+    flexDirection: "column", // Empilhar verticalmente
     justifyContent: "center",
     alignItems: "center",
     marginTop: "20px",
     marginBottom: "20px",
   };
 
+  // Adicione uma margem inferior de 20px entre os botões
   const botaoWrapperStyle: React.CSSProperties = {
-    marginRight: "30px",
+    marginBottom: "20px",
   };
 
   return (
@@ -33,6 +37,8 @@ const BotoesContainer: React.FC<BotoesContainerProps> = ({ botoes }) => {
             texto={botao.texto}
             onClick={botao.onClick}
             largura={botao.largura}
+            corTexto={botao.corTexto}
+            corCaixa={botao.corCaixa}
           />
         </div>
       ))}
@@ -40,4 +46,4 @@ const BotoesContainer: React.FC<BotoesContainerProps> = ({ botoes }) => {
   );
 };
 
-export default BotoesContainer;
+export default BotoesContainerV;

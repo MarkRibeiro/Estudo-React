@@ -14,7 +14,7 @@ const overlayStyle: React.CSSProperties = {
   transform: "translate(-50%, -50%)",
   zIndex: 9999,
   border: "1px solid #000",
-  borderRadius: "6px",
+  borderRadius: "10px",
   display: "flex",
   flexDirection: "column",
   padding: "20px",

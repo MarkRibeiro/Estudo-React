@@ -26,7 +26,7 @@ const BotaoPequenoImagem: React.FC<BotaoProps> = ({
     display: "flex",
     alignItems: "center",
     marginTop: "30px",
-    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
   };
 
   const primeiraAreaStyle = {

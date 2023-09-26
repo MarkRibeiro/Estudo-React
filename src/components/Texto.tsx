@@ -2,14 +2,20 @@ import React from "react";
 
 interface TextoProps {
   texto: string;
+  fonte: string;
+  largura: string;
 }
 
+const estiloTextoContainer: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "center", // Centralizar horizontalmente
+};
+
 const estiloTexto: React.CSSProperties = {
-  fontSize: "24px",
   textAlign: "center",
 };
 
-const Texto: React.FC<TextoProps> = ({ texto }) => {
+const Texto: React.FC<TextoProps> = ({ texto, fonte, largura }) => {
   const processarTexto = (texto: string) => {
     const partes = texto.split("**");
     return partes.map((parte, index) => {
@@ -21,7 +27,13 @@ const Texto: React.FC<TextoProps> = ({ texto }) => {
     });
   };
 
-  return <div style={estiloTexto}>{processarTexto(texto)}</div>;
+  return (
+    <div style={estiloTextoContainer}>
+      <div style={{ ...estiloTexto, fontSize: fonte, width: largura }}>
+        {processarTexto(texto)}
+      </div>
+    </div>
+  );
 };
 
 export default Texto;

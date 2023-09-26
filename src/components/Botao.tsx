@@ -5,6 +5,8 @@ type BotaoProps = {
   onClick: () => void;
   largura: string;
   className?: string;
+  corTexto: string;
+  corCaixa: string;
 };
 
 const Botao: React.FC<BotaoProps> = ({
@@ -12,22 +14,32 @@ const Botao: React.FC<BotaoProps> = ({
   onClick,
   largura,
   className,
+  corTexto,
+  corCaixa,
 }) => {
   const botaoStyle = {
-    backgroundColor: "black",
+    backgroundColor: corCaixa,
     height: "40px",
     width: largura,
     fontSize: "20px",
-    color: "white",
+    color: corTexto,
     border: "none",
     borderRadius: "78px",
     cursor: "pointer",
   };
 
+  // Estilo para centralizar horizontalmente
+  const containerStyle = {
+    display: "flex",
+    justifyContent: "center",
+  };
+
   return (
-    <button className={className} onClick={onClick} style={botaoStyle}>
-      {texto}
-    </button>
+    <div style={containerStyle}>
+      <button className={className} onClick={onClick} style={botaoStyle}>
+        {texto}
+      </button>
+    </div>
   );
 };
 
