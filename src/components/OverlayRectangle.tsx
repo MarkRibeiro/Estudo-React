@@ -13,7 +13,6 @@ const overlayStyle: React.CSSProperties = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   zIndex: 9999,
-  border: "1px solid #000",
   borderRadius: "10px",
   display: "flex",
   flexDirection: "column",
@@ -21,6 +20,7 @@ const overlayStyle: React.CSSProperties = {
   visibility: "visible",
   opacity: 1,
   transition: "visibility 0.3s, opacity 0.3s",
+  boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
 };
 
 const OverlayRectangle: React.FC<OverlayRectangleProps> = ({

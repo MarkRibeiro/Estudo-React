@@ -1,5 +1,6 @@
 import React from "react";
 import Botao from "./Botao";
+import { Link } from "react-router-dom";
 
 type BotoesContainerVProps = {
   botoes: Array<{
@@ -33,13 +34,26 @@ const BotoesContainerV: React.FC<BotoesContainerVProps> = ({ botoes }) => {
           key={index}
           style={index === botoes.length - 1 ? {} : botaoWrapperStyle}
         >
-          <Botao
-            texto={botao.texto}
-            onClick={botao.onClick}
-            largura={botao.largura}
-            corTexto={botao.corTexto}
-            corCaixa={botao.corCaixa}
-          />
+          {/* Verifique se o botão atual deve ser um Link para "/login" */}
+          {botao.texto === "login" ? (
+            <Link to="/login" style={{textDecoration: "none"}}>
+              <Botao
+                texto={botao.texto}
+                largura={botao.largura}
+                corTexto={botao.corTexto}
+                corCaixa={botao.corCaixa}
+              />
+            </Link>
+          ) : (
+            <Link to="/signup" style={{textDecoration: "none"}}>
+              <Botao
+                texto={botao.texto}
+                largura={botao.largura}
+                corTexto={botao.corTexto}
+                corCaixa={botao.corCaixa}
+              />
+            </Link>
+          )}
         </div>
       ))}
     </div>

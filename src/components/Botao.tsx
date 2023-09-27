@@ -2,7 +2,7 @@ import React from "react";
 
 type BotaoProps = {
   texto: string;
-  onClick: () => void;
+  onClick?: () => void;
   largura: string;
   className?: string;
   corTexto: string;
@@ -36,7 +36,7 @@ const Botao: React.FC<BotaoProps> = ({
 
   return (
     <div style={containerStyle}>
-      <button className={className} onClick={onClick} style={botaoStyle}>
+      <button className={className} style={botaoStyle} onClick={onClick}>
         {texto}
       </button>
     </div>

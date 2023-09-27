@@ -2,13 +2,11 @@ import React from "react";
 
 type BotaoProps = {
   texto: string;
-  onClick: () => void;
   imagemSrc: string;
 };
 
 const BotaoGrandeImagem: React.FC<BotaoProps> = ({
   texto,
-  onClick,
   imagemSrc,
 }) => {
   const imagemStyle = {
@@ -47,9 +45,8 @@ const BotaoGrandeImagem: React.FC<BotaoProps> = ({
 
   return (
     <div style={containerStyle}>
-      <div style={botaoStyle} onClick={onClick}>
+      <div style={botaoStyle}>
         {" "}
-        {/* Adicione onClick aqui */}
         <div style={primeiraAreaStyle}>
           <img
             src={imagemSrc}
@@ -58,7 +55,6 @@ const BotaoGrandeImagem: React.FC<BotaoProps> = ({
           />
         </div>
         <div style={segundaAreaStyle}>{texto}</div>
-        {/* <button onClick={onClick} style={{ display: 'none' }}></button> */}
       </div>
     </div>
   );

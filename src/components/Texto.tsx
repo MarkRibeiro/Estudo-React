@@ -4,6 +4,7 @@ interface TextoProps {
   texto: string;
   fonte: string;
   largura: string;
+  alinhamento: "left" | "center" | "right";
 }
 
 const estiloTextoContainer: React.CSSProperties = {
@@ -11,11 +12,13 @@ const estiloTextoContainer: React.CSSProperties = {
   justifyContent: "center", // Centralizar horizontalmente
 };
 
-const estiloTexto: React.CSSProperties = {
-  textAlign: "center",
-};
+const Texto: React.FC<TextoProps> = ({ texto, fonte, largura, alinhamento }) => {
+  const estiloTexto: React.CSSProperties = {
+    fontSize: fonte,
+    width: largura,
+    textAlign: alinhamento,
+  };
 
-const Texto: React.FC<TextoProps> = ({ texto, fonte, largura }) => {
   const processarTexto = (texto: string) => {
     const partes = texto.split("**");
     return partes.map((parte, index) => {
@@ -29,7 +32,7 @@ const Texto: React.FC<TextoProps> = ({ texto, fonte, largura }) => {
 
   return (
     <div style={estiloTextoContainer}>
-      <div style={{ ...estiloTexto, fontSize: fonte, width: largura }}>
+      <div style={estiloTexto}>
         {processarTexto(texto)}
       </div>
     </div>

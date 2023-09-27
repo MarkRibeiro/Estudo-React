@@ -4,6 +4,7 @@ import Espaco from "./Espaco";
 import Botao from "./Botao";
 import ImagensEmLinha from "./ImagensEmLinha";
 import Login from "./Login";
+import { Link } from "react-router-dom";
 
 import logoImage from "../imgs/logo.png";
 import ADPUCImage from "../imgs/ADPUC.png";
@@ -36,10 +37,6 @@ const HomePage: React.FC = () => {
     padding: "20px", // Adiciona um preenchimento para espaçamento interno
   };
 
-  const handleClick1 = () => {
-    alert("Botão 1 clicado!");
-  };
-
   return (
     <div style={pageStyle}>
         <Espaco altura="20px" />
@@ -52,13 +49,14 @@ const HomePage: React.FC = () => {
             inputHeight="51px"
         />
         <Espaco altura="50px" />
-        <Botao
-            texto="entrar"
-            onClick={handleClick1}
-            largura="287px"
-            corTexto="black"
-            corCaixa="white"
-          />
+        <Link to="/conquistas" style={{color: "black", textDecoration: "none"}}>
+          <Botao
+              texto="entrar"
+              largura="287px"
+              corTexto="black"
+              corCaixa="white"
+            />
+        </Link>
         <Espaco altura="50px" />
         <ImagensEmLinha imagens={imagens} distancia="30px" />
     </div>

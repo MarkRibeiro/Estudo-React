@@ -1,6 +1,6 @@
 import React from "react";
 
-type HeaderProps = {
+type HeaderJogoProps = {
   nomeUsuario: string;
 };
 
@@ -11,6 +11,7 @@ const headerStyle = {
   paddingTop: "24px",
   paddingLeft: "30px",
   paddingBottom: "23px",
+  boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
 };
 
 const nomeUsuarioStyle = {
@@ -23,7 +24,7 @@ const partidaStyle = {
   margin: "0px",
 };
 
-const Header: React.FC<HeaderProps> = ({ nomeUsuario }) => {
+const HeaderJogo: React.FC<HeaderJogoProps> = ({ nomeUsuario }) => {
   return (
     <header style={headerStyle}>
       <h1 style={nomeUsuarioStyle}>{nomeUsuario}</h1>
@@ -32,4 +33,4 @@ const Header: React.FC<HeaderProps> = ({ nomeUsuario }) => {
   );
 };
 
-export default Header;
+export default HeaderJogo;
