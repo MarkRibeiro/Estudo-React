@@ -106,34 +106,58 @@ const ConquistasPage: React.FC = () => {
       <Espaco altura="10px" />
       <ConquistasEmLinha conquistas={conquistasLinha6} />
       <Espaco altura="50px" />
-      <Link to="/jogo" style={{color: "black", textDecoration: "none"}}>
+      <Link to="/jogo" style={{ color: "black", textDecoration: "none" }}>
         <Botao
-              texto="jogar"
-              largura="330px"
-              corTexto="white"
-              corCaixa="black"
+          texto="jogar"
+          largura="330px"
+          corTexto="white"
+          corCaixa="black"
         />
       </Link>
-      {isRectangleActive1 && <BackgroundOverlay />}
-      <OverlayRectangle active={isRectangleActive1}>
-        <HeaderConquista
-          imagemSrc={teste}
-          titulo="o diabo"
-          subtitulo="satã em pessoa"
-        />
-        <Espaco altura="10px" />
-        <Texto texto="**Cadê o Rivotril?** Seus índices de estresse estão muito altos!" fonte = "16px" largura = "249px" alinhamento="left"/>
-        <Espaco altura="20px" />
-        <Texto texto="Algo está te tirando do eixo. As vezes o estresse é a sensação mais comum. Só cuidado para não apelar para a violência. Pedir ajuda ou desabafar pode ajudar. Pense nisso!" fonte = "16px" largura = "249px" alinhamento="left"/>
-        <Espaco altura="20px" />
-        <Texto texto="Agora, se quiser bater em alguém, tenho algumas sugestões..." fonte = "16px" largura = "249px" alinhamento="left"/>      
-        <Espaco altura="20px" />
-        <Linha comprimento="90%" cor="black" marginTop="0px" />
-        <Espaco altura="10px" />
-        <Porcentagem imagemSrc={fichaRosaImage} texto="100%" tamanhoFonte="28px"/>
-      </OverlayRectangle>
+      {isRectangleActive1 && (
+        <div onClick={handleHideRectangle1Click}>
+          <BackgroundOverlay />
+          <OverlayRectangle active={isRectangleActive1}>
+            <HeaderConquista
+              imagemSrc={teste}
+              titulo="o diabo"
+              subtitulo="satã em pessoa"
+            />
+            <Espaco altura="10px" />
+            <Texto
+              texto="**Cadê o Rivotril?** Seus índices de estresse estão muito altos!"
+              fonte="16px"
+              largura="249px"
+              alinhamento="left"
+            />
+            <Espaco altura="20px" />
+            <Texto
+              texto="Algo está te tirando do eixo. Às vezes o estresse é a sensação mais comum. Só cuidado para não apelar para a violência. Pedir ajuda ou desabafar pode ajudar. Pense nisso!"
+              fonte="16px"
+              largura="249px"
+              alinhamento="left"
+            />
+            <Espaco altura="20px" />
+            <Texto
+              texto="Agora, se quiser bater em alguém, tenho algumas sugestões..."
+              fonte="16px"
+              largura="249px"
+              alinhamento="left"
+            />
+            <Espaco altura="20px" />
+            <Linha comprimento="90%" cor="black" marginTop="0px" />
+            <Espaco altura="10px" />
+            <Porcentagem
+              imagemSrc={fichaRosaImage}
+              texto="100%"
+              tamanhoFonte="28px"
+            />
+          </OverlayRectangle>
+        </div>
+      )}
     </div>
   );
 };
 
 export default ConquistasPage;
+

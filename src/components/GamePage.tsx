@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import OverlayRectangle from "./OverlayRectangle";
 import BackgroundOverlay from "./BackgroundOverlay";
 import BotaoGrandeImagem from "./BotaoGrandeImagem";
@@ -32,6 +32,7 @@ const GamePage: React.FC = () => {
     const [isRectangleActive3, setRectangle3Active] = useState(false);
     const [isRectangleActive4, setRectangle4Active] = useState(false);
     const [isRectangleActive5, setRectangle5Active] = useState(false);
+    const navigate = useNavigate();  
   
     const handleShowRectangle1Click = () => {
       setRectangle1Active(true);
@@ -45,7 +46,7 @@ const GamePage: React.FC = () => {
       setRectangle2Active(true);
     };
   
-    const handleHideRectangle2lick = () => {
+    const handleHideRectangle2Click = () => {
       setRectangle2Active(false);
     };
   
@@ -146,84 +147,104 @@ const GamePage: React.FC = () => {
             },
           ]}
         />
-        {isRectangleActive1 && <BackgroundOverlay />}
-        <OverlayRectangle active={isRectangleActive1}>
-          <Texto texto="Caso caia em uma casa **com** um **QR code**, clique no botão:" fonte = "16px" largura = "249px" alinhamento="center"/>
-          <Espaco altura="20px" />
-          <Imagem src={botaoQrCodeImage} altura="50.4px" largura="173.6px" />
-          <Espaco altura="20px" />
-          <Texto texto="Caso caia em uma casa **sem** um **QR code**, clique no botão:"  fonte = "16px" largura = "249px" alinhamento="center"/>
-          <Espaco altura="20px" />
-          <Imagem src={botaoImagensImage} altura="50.4px" largura="173.6px" />
-        </OverlayRectangle>
+        {isRectangleActive1 && (
+          <div onClick={handleHideRectangle1Click}>
+            <BackgroundOverlay />
+            <OverlayRectangle active={isRectangleActive1}>
+              <Texto texto="Caso caia em uma casa **com** um **QR code**, clique no botão:" fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Espaco altura="20px" />
+              <Imagem src={botaoQrCodeImage} altura="50.4px" largura="173.6px" />
+              <Espaco altura="20px" />
+              <Texto texto="Caso caia em uma casa **sem** um **QR code**, clique no botão:"  fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Espaco altura="20px" />
+              <Imagem src={botaoImagensImage} altura="50.4px" largura="173.6px" />
+            </OverlayRectangle>
+          </div>
+        )}
   
-        {isRectangleActive2 && <BackgroundOverlay />}
-        <OverlayRectangle active={isRectangleActive2}>
-          <Texto texto="Ao receber uma ficha de pensamento intrusivo, adicione a ficha na contagem para receber sua **recompensa** no final do jogo!"  fonte = "16px" largura = "249px" alinhamento="center"/>
-          <Espaco altura="20px" />
-          <Texto texto="Não esqueça de adicionar todas as suas fichas **antes do final do jogo**" fonte = "16px" largura = "249px" alinhamento="center"/>
-        </OverlayRectangle>
+        {isRectangleActive2 && (
+          <div onClick={handleHideRectangle2Click}>
+            <BackgroundOverlay />
+            <OverlayRectangle active={isRectangleActive2}>
+              <Texto texto="Ao receber uma ficha de pensamento intrusivo, adicione a ficha na contagem para receber sua **recompensa** no final do jogo!"  fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Espaco altura="20px" />
+              <Texto texto="Não esqueça de adicionar todas as suas fichas **antes do final do jogo**" fonte = "16px" largura = "249px" alinhamento="center"/>
+            </OverlayRectangle>
+          </div>
+        )}
   
-        {isRectangleActive3 && <BackgroundOverlay />}
-        <OverlayRectangle active={isRectangleActive3}>
-          <ContadorFicha imagemSrc={fichaRoxaImage} numero={0} />
-          <Linha comprimento="90%" cor="black" marginTop="0px" />
-          <ContadorFicha imagemSrc={fichaRosaImage} numero={0} />
-          <Linha comprimento="90%" cor="black" marginTop="0px" />
-          <ContadorFicha imagemSrc={fichaLaranjaImage} numero={0} />
-          <Linha comprimento="90%" cor="black" marginTop="0px" />
-          <ContadorFicha imagemSrc={fichaAmarelaImage} numero={0} />
-          <Linha comprimento="90%" cor="black" marginTop="0px" />
-          <ContadorFicha imagemSrc={fichaVerdeImage} numero={0} />
-        </OverlayRectangle>
+        {isRectangleActive3 && (
+          <div onClick={handleHideRectangle3Click}>
+            <BackgroundOverlay />
+            <OverlayRectangle active={isRectangleActive3}>
+              <ContadorFicha imagemSrc={fichaRoxaImage} numero={0} />
+              <Linha comprimento="90%" cor="black" marginTop="0px" />
+              <ContadorFicha imagemSrc={fichaRosaImage} numero={0} />
+              <Linha comprimento="90%" cor="black" marginTop="0px" />
+              <ContadorFicha imagemSrc={fichaLaranjaImage} numero={0} />
+              <Linha comprimento="90%" cor="black" marginTop="0px" />
+              <ContadorFicha imagemSrc={fichaAmarelaImage} numero={0} />
+              <Linha comprimento="90%" cor="black" marginTop="0px" />
+              <ContadorFicha imagemSrc={fichaVerdeImage} numero={0} />
+            </OverlayRectangle>
+          </div>
+        )}
   
-        {isRectangleActive4 && <BackgroundOverlay />}
-        <OverlayRectangle active={isRectangleActive4}>
-          <Texto texto="Certeza que quer finalizar a partida?" fonte = "16px" largura = "249px" alinhamento="center"/>
-          <Espaco altura="20px" />
-          <BotoesContainerH
-            botoes={[
-              {
-                texto: "sim, acabou",
-                onClick: handleClick1,
-                largura: "120px",
-                corTexto: "white",
-                corCaixa: "black",
-              },
-              {
-                texto: "não, voltar",
-                onClick: handleHideRectangle4Click,
-                largura: "112px",
-                corTexto: "white",
-                corCaixa: "black",
-              },
-            ]}
-          />
-        </OverlayRectangle>
+        {isRectangleActive4 && (
+          <div onClick={handleHideRectangle4Click}>
+            <BackgroundOverlay />
+            <OverlayRectangle active={isRectangleActive4}>
+              <Texto texto="Certeza que quer finalizar a partida?" fonte="16px" largura="249px" alinhamento="center" />
+              <Espaco altura="20px" />
+              <BotoesContainerH
+                botoes={[
+                  {
+                    texto: "sim, acabou",
+                    onClick: () => {navigate("/conquistas");},
+                    largura: "120px",
+                    corTexto: "white",
+                    corCaixa: "black",
+                  },
+                  {
+                    texto: "não, voltar",
+                    onClick: handleHideRectangle4Click,
+                    largura: "112px",
+                    corTexto: "white",
+                    corCaixa: "black",
+                  },
+                ]}
+              />
+            </OverlayRectangle>
+          </div>
+        )}
 
-        {isRectangleActive5 && <BackgroundOverlay />}
-        <OverlayRectangle active={isRectangleActive5}>
-          <Texto texto="Certeza que quer desistir do jogo? Você vai perder todo o progresso da partida atual." fonte = "16px" largura = "249px" alinhamento="center"/>
-          <Espaco altura="20px" />
-          <BotoesContainerH
-            botoes={[
-              {
-                texto: "sim, desisto",
-                onClick: handleClick1,
-                largura: "116px",
-                corTexto: "white",
-                corCaixa: "black",
-              },
-              {
-                texto: "não, voltar",
-                onClick: handleHideRectangle5Click,
-                largura: "116px",
-                corTexto: "white",
-                corCaixa: "black",
-              },
-            ]}
-          />
-        </OverlayRectangle>
+        {isRectangleActive5 && (
+          <div onClick={handleHideRectangle5Click}>
+            <BackgroundOverlay />
+            <OverlayRectangle active={isRectangleActive5}>
+              <Texto texto="Certeza que quer desistir do jogo? Você vai perder todo o progresso da partida atual." fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Espaco altura="20px" />
+              <BotoesContainerH
+                botoes={[
+                  {
+                    texto: "sim, desisto",
+                    onClick: () => {navigate("/conquistas");},
+                    largura: "116px",
+                    corTexto: "white",
+                    corCaixa: "black",
+                  },
+                  {
+                    texto: "não, voltar",
+                    onClick: handleHideRectangle5Click,
+                    largura: "116px",
+                    corTexto: "white",
+                    corCaixa: "black",
+                  },
+                ]}
+              />
+            </OverlayRectangle>
+          </div>
+        )}
       </div>
     );
   };
