@@ -17,7 +17,6 @@ const TextoComTooltip: React.FC<TextoComTooltipProps> = ({
     justifyContent: "center",
     textAlign: "center" as const,
     marginTop: "23px",
-    marginBottom: "27px",
     fontSize: "24px",
   };
 
@@ -28,7 +27,7 @@ const TextoComTooltip: React.FC<TextoComTooltipProps> = ({
         <img
           src={tooltipImage}
           alt="Ícone"
-          style={{ marginLeft: "5px", width: "24px", height: "24px" }}
+          style={{ marginLeft: "10px", width: "24px", height: "24px" }}
         />
       </span>
     </div>

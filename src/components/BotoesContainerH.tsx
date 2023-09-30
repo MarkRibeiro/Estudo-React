@@ -6,6 +6,7 @@ type BotoesContainerHProps = {
     texto: string;
     onClick: () => void;
     largura: string;
+    altura: string;
     corTexto: string;
     corCaixa: string;
   }>;
@@ -16,12 +17,12 @@ const BotoesContainerH: React.FC<BotoesContainerHProps> = ({ botoes }) => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "20px",
-    marginBottom: "20px",
+    marginTop: "0px",
+    marginBottom: "10px",
   };
 
   const botaoWrapperStyle: React.CSSProperties = {
-    marginRight: "30px",
+    marginRight: "14px",
   };
 
   return (
@@ -35,6 +36,7 @@ const BotoesContainerH: React.FC<BotoesContainerHProps> = ({ botoes }) => {
             texto={botao.texto}
             onClick={botao.onClick}
             largura={botao.largura}
+            altura={botao.altura}
             corTexto={botao.corTexto}
             corCaixa={botao.corCaixa}
           />

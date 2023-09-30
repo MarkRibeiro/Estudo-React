@@ -4,6 +4,7 @@ type BotaoProps = {
   texto: string;
   onClick?: () => void;
   largura: string;
+  altura: string;
   className?: string;
   corTexto: string;
   corCaixa: string;
@@ -13,13 +14,14 @@ const Botao: React.FC<BotaoProps> = ({
   texto,
   onClick,
   largura,
+  altura,
   className,
   corTexto,
   corCaixa,
 }) => {
   const botaoStyle = {
     backgroundColor: corCaixa,
-    height: "40px",
+    height: altura,
     width: largura,
     fontSize: "20px",
     color: corTexto,

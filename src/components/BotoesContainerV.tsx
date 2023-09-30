@@ -7,6 +7,7 @@ type BotoesContainerVProps = {
     texto: string;
     onClick: () => void;
     largura: string;
+    altura: string;
     corTexto: string;
     corCaixa: string;
   }>;
@@ -40,6 +41,7 @@ const BotoesContainerV: React.FC<BotoesContainerVProps> = ({ botoes }) => {
               <Botao
                 texto={botao.texto}
                 largura={botao.largura}
+                altura={botao.altura}
                 corTexto={botao.corTexto}
                 corCaixa={botao.corCaixa}
               />
@@ -49,6 +51,7 @@ const BotoesContainerV: React.FC<BotoesContainerVProps> = ({ botoes }) => {
               <Botao
                 texto={botao.texto}
                 largura={botao.largura}
+                altura={botao.altura}
                 corTexto={botao.corTexto}
                 corCaixa={botao.corCaixa}
               />

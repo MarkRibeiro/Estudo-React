@@ -7,14 +7,15 @@ interface ConquistasEmLinhaProps {
 
 const ConquistasEmLinha: React.FC<ConquistasEmLinhaProps> = ({ conquistas }) => {
   return (
-    <div style={{ display: "flex", justifyContent: "space-between", marginLeft: "10px", marginRight: "10px" }}>
+    <div style={{ display: "flex", marginLeft: "auto", marginRight: "auto", width: "355px" }}>
       {conquistas.map((conquista, index) => (
-        <Conquista
-          key={index}
-          ativado={conquista.ativado}
-          imagem={conquista.imagem}
-          onClick={conquista.onClick} // Passe a função onClick
-        />
+        <div key={index} style={{ marginRight: index < conquistas.length - 1 ? "10px" : "0" }}>
+          <Conquista
+            ativado={conquista.ativado}
+            imagem={conquista.imagem}
+            onClick={conquista.onClick} // Passe a função onClick
+          />
+        </div>
       ))}
     </div>
   );

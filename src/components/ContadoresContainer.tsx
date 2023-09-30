@@ -12,6 +12,7 @@ const ContadoresContainer: React.FC<ContadoresContainerProps> = ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: "30px",
   };
 
   const contadorWrapperStyle: React.CSSProperties = {

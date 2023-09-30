@@ -23,7 +23,7 @@ const BotaoGrandeImagem: React.FC<BotaoProps> = ({
     fontSize: "24px",
     display: "flex",
     alignItems: "center",
-    marginTop: "10px",
+    marginTop: "23px",
     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
   };
 

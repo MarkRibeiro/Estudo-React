@@ -12,6 +12,7 @@ import BotoesContainerH from "./BotoesContainerH";
 import Texto from "./Texto";
 import Espaco from "./Espaco";
 import Imagem from "./Imagem";
+import Botao from "./Botao";
 import ContadorFicha from "./ContadorFicha";
 
 // Importe das imagens da pasta 'imgs'
@@ -117,7 +118,7 @@ const GamePage: React.FC = () => {
             imagemSrc={imagensImage}
           />
         </Link>
-        <Linha comprimento="90%" cor="black" marginTop="30px" />
+        <Linha comprimento="90%" cor="black" marginTop="40px" marginBottom ="0px"/>
         <TextoComTooltip
           texto="contagem de cartas"
           alarmeOnClick={handleShowRectangle2Click}
@@ -128,13 +129,15 @@ const GamePage: React.FC = () => {
           onClick={handleShowRectangle3Click}
           imagemSrc={fichasImage}
         />
-        <Linha comprimento="90%" cor="black" marginTop="30px" />
+        <Linha comprimento="90%" cor="black" marginTop="40px" marginBottom ="10px" />
+        <Espaco altura="20px" />
         <BotoesContainerH
           botoes={[
             {
               texto: "finalizar partida",
               onClick: handleShowRectangle4Click,
               largura: "200px",
+              altura: "40px",
               corTexto: "white",
               corCaixa: "black",
             },
@@ -142,6 +145,7 @@ const GamePage: React.FC = () => {
               texto: "desistir",
               onClick: handleShowRectangle5Click,
               largura: "116px",
+              altura: "40px",
               corTexto: "white",
               corCaixa: "black",
             },
@@ -151,11 +155,11 @@ const GamePage: React.FC = () => {
           <div onClick={handleHideRectangle1Click}>
             <BackgroundOverlay />
             <OverlayRectangle active={isRectangleActive1}>
-              <Texto texto="Caso caia em uma casa **com** um **QR code**, clique no botão:" fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Texto texto="Caso caia em uma casa **com** um **QR code**, clique no botão:" fonte = "20px" largura = "249px" alinhamento="center"/>
               <Espaco altura="20px" />
               <Imagem src={botaoQrCodeImage} altura="50.4px" largura="173.6px" />
               <Espaco altura="20px" />
-              <Texto texto="Caso caia em uma casa **sem** um **QR code**, clique no botão:"  fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Texto texto="Caso caia em uma casa **sem** um **QR code**, clique no botão:"  fonte = "20px" largura = "249px" alinhamento="center"/>
               <Espaco altura="20px" />
               <Imagem src={botaoImagensImage} altura="50.4px" largura="173.6px" />
             </OverlayRectangle>
@@ -166,35 +170,31 @@ const GamePage: React.FC = () => {
           <div onClick={handleHideRectangle2Click}>
             <BackgroundOverlay />
             <OverlayRectangle active={isRectangleActive2}>
-              <Texto texto="Ao receber uma ficha de pensamento intrusivo, adicione a ficha na contagem para receber sua **recompensa** no final do jogo!"  fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Texto texto="Ao receber uma ficha de pensamento intrusivo, adicione a ficha na contagem para receber sua **recompensa** no final do jogo!"  fonte = "20px" largura = "249px" alinhamento="center"/>
               <Espaco altura="20px" />
-              <Texto texto="Não esqueça de adicionar todas as suas fichas **antes do final do jogo**" fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Texto texto="Não esqueça de adicionar todas as suas fichas **antes do final do jogo**" fonte = "20px" largura = "249px" alinhamento="center"/>
             </OverlayRectangle>
           </div>
         )}
   
-        {isRectangleActive3 && (
-          <div onClick={handleHideRectangle3Click}>
-            <BackgroundOverlay />
-            <OverlayRectangle active={isRectangleActive3}>
-              <ContadorFicha imagemSrc={fichaRoxaImage} numero={0} />
-              <Linha comprimento="90%" cor="black" marginTop="0px" />
-              <ContadorFicha imagemSrc={fichaRosaImage} numero={0} />
-              <Linha comprimento="90%" cor="black" marginTop="0px" />
-              <ContadorFicha imagemSrc={fichaLaranjaImage} numero={0} />
-              <Linha comprimento="90%" cor="black" marginTop="0px" />
-              <ContadorFicha imagemSrc={fichaAmarelaImage} numero={0} />
-              <Linha comprimento="90%" cor="black" marginTop="0px" />
-              <ContadorFicha imagemSrc={fichaVerdeImage} numero={0} />
-            </OverlayRectangle>
-          </div>
-        )}
+        {isRectangleActive3 && <BackgroundOverlay />}
+          <OverlayRectangle active={isRectangleActive3}>
+            <ContadorFicha imagemSrc={fichaRoxaImage} numero={0} />
+            <Linha comprimento="90%" cor="black" marginTop="0px" marginBottom ="0px"/>
+            <ContadorFicha imagemSrc={fichaRosaImage} numero={0} />
+            <Linha comprimento="90%" cor="black" marginTop="0px" marginBottom ="0px"/>
+            <ContadorFicha imagemSrc={fichaLaranjaImage} numero={0} />
+            <Linha comprimento="90%" cor="black" marginTop="0px" marginBottom ="0px"/>
+            <ContadorFicha imagemSrc={fichaAmarelaImage} numero={0} />
+            <Linha comprimento="90%" cor="black" marginTop="0px" marginBottom ="0px"/>
+            <ContadorFicha imagemSrc={fichaVerdeImage} numero={0} />
+          </OverlayRectangle>
   
         {isRectangleActive4 && (
           <div onClick={handleHideRectangle4Click}>
             <BackgroundOverlay />
             <OverlayRectangle active={isRectangleActive4}>
-              <Texto texto="Certeza que quer finalizar a partida?" fonte="16px" largura="249px" alinhamento="center" />
+              <Texto texto="Certeza que quer finalizar a partida?" fonte="20px" largura="249px" alinhamento="center" />
               <Espaco altura="20px" />
               <BotoesContainerH
                 botoes={[
@@ -202,6 +202,7 @@ const GamePage: React.FC = () => {
                     texto: "sim, acabou",
                     onClick: () => {navigate("/conquistas");},
                     largura: "120px",
+                    altura: "40px",
                     corTexto: "white",
                     corCaixa: "black",
                   },
@@ -209,6 +210,7 @@ const GamePage: React.FC = () => {
                     texto: "não, voltar",
                     onClick: handleHideRectangle4Click,
                     largura: "112px",
+                    altura: "40px",
                     corTexto: "white",
                     corCaixa: "black",
                   },
@@ -222,7 +224,7 @@ const GamePage: React.FC = () => {
           <div onClick={handleHideRectangle5Click}>
             <BackgroundOverlay />
             <OverlayRectangle active={isRectangleActive5}>
-              <Texto texto="Certeza que quer desistir do jogo? Você vai perder todo o progresso da partida atual." fonte = "16px" largura = "249px" alinhamento="center"/>
+              <Texto texto="Certeza que quer desistir do jogo? Você vai perder todo o progresso da partida atual." fonte = "20px" largura = "249px" alinhamento="center"/>
               <Espaco altura="20px" />
               <BotoesContainerH
                 botoes={[
@@ -230,6 +232,7 @@ const GamePage: React.FC = () => {
                     texto: "sim, desisto",
                     onClick: () => {navigate("/conquistas");},
                     largura: "116px",
+                    altura: "40px",
                     corTexto: "white",
                     corCaixa: "black",
                   },
@@ -237,6 +240,7 @@ const GamePage: React.FC = () => {
                     texto: "não, voltar",
                     onClick: handleHideRectangle5Click,
                     largura: "116px",
+                    altura: "40px",
                     corTexto: "white",
                     corCaixa: "black",
                   },

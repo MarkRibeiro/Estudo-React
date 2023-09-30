@@ -18,8 +18,8 @@ const HeaderConquista: React.FC<HeaderConquistaProps> = ({
   };
 
   const imagemStyle: React.CSSProperties = {
-    width: "100px",
-    height: "100px",
+    width: "110px",
+    height: "106px",
     borderRadius: "50%", // Torna a imagem circular
     objectFit: "cover", // Redimensiona a imagem para cobrir o círculo
   };
@@ -33,12 +33,16 @@ const HeaderConquista: React.FC<HeaderConquistaProps> = ({
     marginBottom: "0px", // Distância de 3px abaixo do título
   };
 
+  const subtituloStyle: React.CSSProperties = {
+    margin: "0px",
+  };
+
   return (
     <div style={containerStyle}>
       <img src={imagemSrc} alt="Imagem" style={imagemStyle} />
       <div style={textoContainerStyle}>
-        <h2 style={tituloStyle}>{titulo}</h2>
-        <p>{subtitulo}</p>
+        <b><h2 style={tituloStyle}>{titulo}</h2></b>
+        <i><p style={subtituloStyle}>{subtitulo}</p></i>
       </div>
     </div>
   );

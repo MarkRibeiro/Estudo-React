@@ -47,7 +47,7 @@ const HomePage: React.FC = () => {
   return (
     <div style={pageStyle}>
         <Espaco altura="20px" />
-        <Imagem src={logoImage} altura="230px" largura="237px" />
+        <Imagem src={logoImage} altura="237px" largura="230px" />
         <Espaco altura="80px" />
         <BotoesContainerV
             botoes={[
@@ -55,6 +55,7 @@ const HomePage: React.FC = () => {
                 texto: "login",
                 onClick: handleClick1,
                 largura: "287px",
+                altura: "50px",
                 corTexto: "black",
                 corCaixa: "white",
               },
@@ -62,6 +63,7 @@ const HomePage: React.FC = () => {
                 texto: "cadastro",
                 onClick: handleClick2,
                 largura: "287px",
+                altura: "50px",
                 corTexto: "black",
                 corCaixa: "white",
               },

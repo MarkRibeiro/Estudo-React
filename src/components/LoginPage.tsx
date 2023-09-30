@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
   return (
     <div style={pageStyle}>
         <Espaco altura="20px" />
-        <Imagem src={logoImage} altura="230px" largura="237px" />
+        <Imagem src={logoImage} altura="237px" largura="230px" />
         <Espaco altura="80px" />
         <Login
             usernameLabel="Usuário"
@@ -53,6 +53,7 @@ const HomePage: React.FC = () => {
           <Botao
               texto="entrar"
               largura="287px"
+              altura="50px"
               corTexto="black"
               corCaixa="white"
             />

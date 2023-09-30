@@ -4,9 +4,10 @@ type LinhaProps = {
   comprimento: string;
   cor: string;
   marginTop: string;
+  marginBottom: string;
 };
 
-const Linha: React.FC<LinhaProps> = ({ comprimento, cor, marginTop }) => {
+const Linha: React.FC<LinhaProps> = ({ comprimento, cor, marginTop, marginBottom }) => {
   const containerStyle = {
     display: "flex",
     justifyContent: "center",
@@ -18,6 +19,7 @@ const Linha: React.FC<LinhaProps> = ({ comprimento, cor, marginTop }) => {
     height: "1px",
     background: cor,
     marginTop: marginTop,
+    marginBottom: marginBottom,
   };
 
   return (
