@@ -58,7 +58,7 @@ const SignupPage: React.FC = () => {
               corCaixa="white"
             />
         </Link>
-        <Espaco altura="50px" />
+        <Espaco altura="100px" />
         <ImagensEmLinha imagens={imagens} distancia="30px" />
     </div>
   );

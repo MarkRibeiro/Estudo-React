@@ -5,6 +5,7 @@ import SignupPage from "./components/SignupPage";
 import LoginPage from "./components/LoginPage";
 import ConquistasPage from "./components/ConquistasPage";
 import GamePage from "./components/GamePage";
+import CenarioPage from "./components/CenarioPage";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
       <Route path="/login" element={<LoginPage/>}/>
       <Route path="/conquistas" element={<ConquistasPage/>}/>
       <Route path="/jogo" element={<GamePage/>}/>
+      <Route path="/cenario" element={<CenarioPage/>}/>
     </Routes>
   );
 };

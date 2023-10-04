@@ -71,7 +71,7 @@ const HomePage: React.FC = () => {
           />
           <Espaco altura="50px" />
           <Texto texto="Esse aplicativo é um auxílio para a versão de tabuleiro"  fonte = "20px" largura = "265px" alinhamento="center"/>
-          <Espaco altura="50px" />
+          <Espaco altura="100px" />
           <ImagensEmLinha imagens={imagens} distancia="30px" />
     </div>
   );

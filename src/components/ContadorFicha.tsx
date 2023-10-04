@@ -3,36 +3,8 @@ import Imagem from "./Imagem";
 import BotaoCircular from "./BotaoCircular";
 import CaixaNumerica from "./CaixaNumerica";
 
-interface BotaoCircularCustomProps {
-  texto: string;
-  diametro: string;
-  fontSize: string;
-  fontWeight: string;
-}
-
-const BotaoCircularCustom: React.FC<BotaoCircularCustomProps> = ({
-  texto,
-  diametro,
-  fontSize,
-  fontWeight,
-}) => {
-  const estiloBotao: React.CSSProperties = {
-    width: diametro,
-    height: diametro,
-    borderRadius: "50%", // Torna o botão circular
-    backgroundColor: "black", // Define a cor de fundo como preto
-    color: "white", // Define a cor do texto como branco
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    cursor: "pointer",
-    fontSize: fontSize,
-    fontWeight: fontWeight,
-    lineHeight: diametro, // Alinha o texto verticalmente no centro
-  };
-
-  return <div style={estiloBotao}>{texto}</div>;
-};
+import menos from "../imgs/botaoCircular2.png";
+import mais from "../imgs/botaoCircular3.png";
 
 interface ContadorFichaProps {
   imagemSrc: string;
@@ -61,21 +33,11 @@ const ContadorFicha: React.FC<ContadorFichaProps> = ({ imagemSrc, numero }) => {
   return (
     <div style={estiloContador}>
       <Imagem src={imagemSrc} altura="79px" largura="79px" />
-      <BotaoCircularCustom
-        texto="-"
-        diametro="30px"
-        fontSize="22px"
-        fontWeight="bold"
-      />
+      <BotaoCircular diametro="30px" imagemSrc={menos} aplicarBoxShadow={false} />
       <div style={estiloCaixaNumerica}>
         <CaixaNumerica numero={numero} />
       </div>
-      <BotaoCircularCustom
-        texto="+"
-        diametro="30px"
-        fontSize="22px"
-        fontWeight="bold"
-      />
+      <BotaoCircular diametro="30px" imagemSrc={mais} aplicarBoxShadow={false} />
     </div>
   );
 };

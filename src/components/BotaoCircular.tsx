@@ -1,28 +1,29 @@
 import React from "react";
 
 interface BotaoCircularProps {
-  texto: string;
   diametro: string;
-  fontSize: string;
-  fontWeight: string;
+  imagemSrc: string;
+  aplicarBoxShadow: boolean;
 }
 
-const BotaoCircular: React.FC<BotaoCircularProps> = ({ texto, diametro, fontSize, fontWeight }) => {
+const BotaoCircular: React.FC<BotaoCircularProps> = ({ diametro, imagemSrc, aplicarBoxShadow }) => {
   const estiloBotao: React.CSSProperties = {
-    backgroundColor: "black",
-    color: "white",
-    borderRadius: "50%",
     width: diametro,
     height: diametro,
+    borderRadius: "50%",
+    overflow: "hidden",
     display: "flex",
-    justifyContent: "center",
     alignItems: "center",
+    justifyContent: "center",
     cursor: "pointer",
-    fontSize:fontSize,
-    fontWeight:fontWeight,
+    boxShadow: aplicarBoxShadow ? "0px 4px 4px rgba(0, 0, 0, 0.65)" : "none",
   };
 
-  return <div style={estiloBotao}>{texto}</div>;
+  return (
+    <div style={estiloBotao}>
+      <img src={imagemSrc} alt="Imagem" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+    </div>
+  );
 };
 
 export default BotaoCircular;
