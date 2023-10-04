@@ -115,7 +115,7 @@ const ConquistasPage: React.FC = () => {
     <div>
       <HeaderConquistasPage nomeUsuario={"nome de usuário"} />
       <Espaco altura="50px" />
-      <TextosEmLinha textoEsquerda="conquistas" textoDireita="1/26" largura="337px" />
+      <TextosEmLinha textoEsquerda="conquistas" textoDireita="7/26" largura="337px" />
       <Espaco altura="20px" />
       <ConquistasEmLinha conquistas={conquistasLinha1} />
       <Espaco altura="10px" />
@@ -332,7 +332,7 @@ const ConquistasPage: React.FC = () => {
           <Linha comprimento="100%" cor="black" marginTop="0px" marginBottom ="0px"/>
           <Espaco altura="10px" />
           <Porcentagem porcentagens= {[
-            { imagemSrc: fichaLaranjaImage, texto: "100%", tamanhoFonte: "28px", marginRight: "0px"},
+            { imagemSrc: fichaRoxaImage, texto: "100%", tamanhoFonte: "28px", marginRight: "0px"},
           ]}
           />
         </OverlayRectangle>
