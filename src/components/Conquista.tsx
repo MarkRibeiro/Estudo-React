@@ -16,8 +16,8 @@ const Conquista: React.FC<ConquistaProps> = ({
     <button
       onClick={onClick} // Usa a função de clique personalizada
       style={{
-        width: "63px",
-        height: "63px",
+        width: "70px",
+        height: "70px",
         borderRadius: "50%",
         backgroundColor: ativado ? "transparent" : "#000",
         border: "none",
