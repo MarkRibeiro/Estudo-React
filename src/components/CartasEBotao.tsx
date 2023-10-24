@@ -10,9 +10,10 @@ interface CartasEBotaoProps {
   rotacao?: number;
   textoBotao: string;
   ativadoBotao: boolean;
+  onBotaoCircularClick: () => void;
 }
 
-const CartasEBotao: React.FC<CartasEBotaoProps> = ({ cartas, rotacao = 0, textoBotao, ativadoBotao }) => {
+const CartasEBotao: React.FC<CartasEBotaoProps> = ({ cartas, rotacao = 0, textoBotao, ativadoBotao, onBotaoCircularClick }) => {
   return (
     <div
       style={{
@@ -25,7 +26,7 @@ const CartasEBotao: React.FC<CartasEBotaoProps> = ({ cartas, rotacao = 0, textoB
       }}
     >
       <div style = {{display: "flex", width: "100%"}}>
-        <BotaoCircular diametro="40px" imagemSrc={teste} aplicarBoxShadow={true} />
+        <BotaoCircular diametro="40px" imagemSrc={teste} aplicarBoxShadow={true} onClick={onBotaoCircularClick} />
       </div>
       <CartasEmLinha cartas={cartas} rotacao={rotacao} />
       <BotaoTransparente texto={textoBotao} ativado={ativadoBotao} />

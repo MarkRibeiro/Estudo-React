@@ -4,9 +4,10 @@ interface BotaoCircularProps {
   diametro: string;
   imagemSrc: string;
   aplicarBoxShadow: boolean;
+  onClick: () => void;
 }
 
-const BotaoCircular: React.FC<BotaoCircularProps> = ({ diametro, imagemSrc, aplicarBoxShadow }) => {
+const BotaoCircular: React.FC<BotaoCircularProps> = ({ diametro, imagemSrc, aplicarBoxShadow, onClick }) => {
   const estiloBotao: React.CSSProperties = {
     width: diametro,
     height: diametro,
@@ -20,7 +21,7 @@ const BotaoCircular: React.FC<BotaoCircularProps> = ({ diametro, imagemSrc, apli
   };
 
   return (
-    <div style={estiloBotao}>
+    <div style={estiloBotao} onClick={onClick}>
       <img src={imagemSrc} alt="Imagem" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
     </div>
   );
