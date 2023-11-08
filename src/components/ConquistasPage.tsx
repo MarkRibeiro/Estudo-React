@@ -114,28 +114,28 @@ const ConquistasPage: React.FC = () => {
   const conquistasLinha1 = [
     {
       imagem: p1,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha1[0], setRectangle1Active);
       },
     },
     {
       imagem: p2,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha1[1], setRectangle2Active);
       },
     },
     {
       imagem: p3,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha1[2], setRectangle3Active);
       },
     },
     {
       imagem: p4,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha1[3], setRectangle4Active);
       },
@@ -144,28 +144,28 @@ const ConquistasPage: React.FC = () => {
   const conquistasLinha2 = [
     {
       imagem: p5,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha2[0], setRectangle5Active);
       },
     },
     {
       imagem: p6,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha2[1], setRectangle6Active);
       },
     },
     {
       imagem: p7,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha2[2], setRectangle7Active);
       },
     },
     {
       imagem: p8,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha2[3], setRectangle8Active);
       },
@@ -174,28 +174,28 @@ const ConquistasPage: React.FC = () => {
   const conquistasLinha3 = [
     {
       imagem: p9,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha3[0], setRectangle9Active);
       },
     },
     {
       imagem: p10,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha3[1], setRectangle10Active);
       },
     },
     {
       imagem: p11,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha3[2], setRectangle11Active);
       },
     },
     {
       imagem: p12,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha3[3], setRectangle12Active);
       },
@@ -204,28 +204,28 @@ const ConquistasPage: React.FC = () => {
   const conquistasLinha4 = [
     {
       imagem: p13,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha4[0], setRectangle13Active);
       },
     },
     {
       imagem: p14,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha4[1], setRectangle14Active);
       },
     },
     {
       imagem: p15,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha4[2], setRectangle15Active);
       },
     },
     {
       imagem: p16,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha4[3], setRectangle16Active);
       },
@@ -234,28 +234,28 @@ const ConquistasPage: React.FC = () => {
   const conquistasLinha5 = [
     {
       imagem: p17,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha5[0], setRectangle17Active);
       },
     },
     {
       imagem: p18,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha5[1], setRectangle18Active);
       },
     },
     {
       imagem: p19,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha5[2], setRectangle19Active);
       },
     },
     {
       imagem: p20,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha5[3], setRectangle20Active);
       },
@@ -264,7 +264,7 @@ const ConquistasPage: React.FC = () => {
   const conquistasLinha6 = [
     {
       imagem: p21,
-      ativado: true,
+      ativado: false,
       onClick: () => {
         showRectangle(conquistasLinha6[0], setRectangle21Active);
       },

@@ -11,13 +11,13 @@ import fundo05 from "../imgs/cenario/c05.png";
 import fundo06 from "../imgs/cenario/c06.png";
 import fundo07 from "../imgs/cenario/c07.png";
 import fundo08 from "../imgs/cenario/c08.png";
-import fundo09 from "../imgs/cenario/b.png";
-import fundo10 from "../imgs/cenario/b.png";
-import fundo11 from "../imgs/cenario/b.png";
-import fundo12 from "../imgs/cenario/b.png";
-import fundo13 from "../imgs/cenario/b.png";
-import fundo14 from "../imgs/cenario/b.png";
-import fundo15 from "../imgs/cenario/b.png";
+import fundo09 from "../imgs/cenario/c09.png";
+import fundo10 from "../imgs/cenario/c10.png";
+import fundo11 from "../imgs/cenario/c11.png";
+import fundo12 from "../imgs/cenario/c12.png";
+import fundo13 from "../imgs/cenario/c13.png";
+import fundo14 from "../imgs/cenario/c14.png";
+import fundo15 from "../imgs/cenario/c15.png";
 
 var id = 0;
 const cenario = [
