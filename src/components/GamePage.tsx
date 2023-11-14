@@ -35,6 +35,10 @@ const GamePage: React.FC = () => {
   const [isRectangleActive5, setRectangle5Active] = useState(false);
   const navigate = useNavigate();
 
+  const handleCenarioClick = () => {
+    navigate('/cenario');
+  }
+
   const handleShowRectangle1Click = () => {
     setRectangle1Active(true);
   };
@@ -109,9 +113,7 @@ const GamePage: React.FC = () => {
         texto="Interações"
         alarmeOnClick={handleShowRectangle1Click}
       />
-      <Link to="/cenario" style={{ color: "black", textDecoration: "none" }}>
-        <BotaoGrandeImagem texto="escanear cenário" imagemSrc={qrCodeImage} />
-      </Link>
+      <BotaoGrandeImagem texto="escanear cenário" imagemSrc={qrCodeImage} onClick={handleCenarioClick} />
       <Link
         to="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
         style={{ color: "black", textDecoration: "none" }}
