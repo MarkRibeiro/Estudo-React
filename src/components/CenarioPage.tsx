@@ -19,7 +19,7 @@ import fundo13 from "../imgs/cenario/c13.png";
 import fundo14 from "../imgs/cenario/c14.png";
 import fundo15 from "../imgs/cenario/c15.png";
 
-var id = 0;
+var id = Math.floor(Math.random() * (+15 - +0)) + +0;
 const cenario = [
   {
     //cenário 01

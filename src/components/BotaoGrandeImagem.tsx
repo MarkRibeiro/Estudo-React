@@ -9,7 +9,7 @@ type BotaoProps = {
 const BotaoGrandeImagem: React.FC<BotaoProps> = ({
   texto,
   imagemSrc,
-  onClick
+  onClick,
 }) => {
   const imagemStyle = {
     maxWidth: "75px",
@@ -25,8 +25,9 @@ const BotaoGrandeImagem: React.FC<BotaoProps> = ({
     fontSize: "24px",
     display: "flex",
     alignItems: "center",
-    marginTop: "23px",
     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+    margin: "0 auto",
+    marginTop: "23px",
   };
 
   const primeiraAreaStyle = {
