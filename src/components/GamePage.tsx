@@ -14,6 +14,7 @@ import Espaco from "./Espaco";
 import Imagem from "./Imagem";
 import Botao from "./Botao";
 import ContadorFicha from "./ContadorFicha";
+import FichasController from "./FichasController";
 
 // Importe das imagens da pasta 'imgs'
 import fichaAmarelaImage from "../imgs/ficha-amarela.png";
@@ -165,7 +166,7 @@ const GamePage: React.FC = () => {
       />
       {isRectangleActive1 && (
         <div onClick={handleHideRectangle1Click}>
-          <BackgroundOverlay />
+          <BackgroundOverlay/>
           <OverlayRectangle active={isRectangleActive1}>
             <Texto
               texto="Caso caia em uma casa **com** um **QR code**, clique no botão:"
@@ -190,7 +191,7 @@ const GamePage: React.FC = () => {
 
       {isRectangleActive2 && (
         <div onClick={handleHideRectangle2Click}>
-          <BackgroundOverlay />
+          <BackgroundOverlay/>
           <OverlayRectangle active={isRectangleActive2}>
             <Texto
               texto="Ao receber uma ficha de pensamento intrusivo, adicione a ficha na contagem para receber sua **recompensa** no final do jogo!"
@@ -209,42 +210,11 @@ const GamePage: React.FC = () => {
         </div>
       )}
 
-      {isRectangleActive3 && <BackgroundOverlay />}
-      <OverlayRectangle active={isRectangleActive3}>
-        <ContadorFicha imagemSrc={fichaRoxaImage} numero={0} />
-        <Linha
-          comprimento="90%"
-          cor="black"
-          marginTop="0px"
-          marginBottom="0px"
-        />
-        <ContadorFicha imagemSrc={fichaRosaImage} numero={0} />
-        <Linha
-          comprimento="90%"
-          cor="black"
-          marginTop="0px"
-          marginBottom="0px"
-        />
-        <ContadorFicha imagemSrc={fichaLaranjaImage} numero={0} />
-        <Linha
-          comprimento="90%"
-          cor="black"
-          marginTop="0px"
-          marginBottom="0px"
-        />
-        <ContadorFicha imagemSrc={fichaAmarelaImage} numero={0} />
-        <Linha
-          comprimento="90%"
-          cor="black"
-          marginTop="0px"
-          marginBottom="0px"
-        />
-        <ContadorFicha imagemSrc={fichaVerdeImage} numero={0} />
-      </OverlayRectangle>
+      {isRectangleActive3 && <FichasController onClick={handleHideRectangle3Click}/>}
 
       {isRectangleActive4 && (
         <div onClick={handleHideRectangle4Click}>
-          <BackgroundOverlay />
+          <BackgroundOverlay/>
           <OverlayRectangle active={isRectangleActive4}>
             <Texto
               texto="Certeza que quer finalizar a partida?"
@@ -281,7 +251,7 @@ const GamePage: React.FC = () => {
 
       {isRectangleActive5 && (
         <div onClick={handleHideRectangle5Click}>
-          <BackgroundOverlay />
+          <BackgroundOverlay/>
           <OverlayRectangle active={isRectangleActive5}>
             <Texto
               texto="Certeza que quer desistir do jogo? Você vai perder todo o progresso da partida atual."
