@@ -114,7 +114,7 @@ const ConquistasPage: React.FC = () => {
   const conquistasLinha1 = [
     {
       imagem: p1,
-      ativado: false,
+      ativado: true,
       onClick: () => {
         showRectangle(conquistasLinha1[0], setRectangle1Active);
       },
