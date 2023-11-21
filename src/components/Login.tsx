@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface LoginProps {
   usernameLabel: string;
@@ -40,16 +40,19 @@ const Login: React.FC<LoginProps> = ({
     color: "white", // Define a cor do texto como branco
   };
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <div style={containerStyle}>
       <div style={inputContainerStyle}>
         <label htmlFor="username" style={labelStyle}>{usernameLabel}</label>
-        <input type="text" id="username" style={inputStyle} placeholder="Digite seu usuário" />
+        <input type="text" id="username" style={inputStyle} onChange={(e) => setUsername(e.target.value)} placeholder="Digite seu usuário" />
       </div>
 
       <div style={inputContainerStyle}>
         <label htmlFor="password" style={labelStyle}>{passwordLabel}</label>
-        <input type="password" id="password" style={inputStyle} placeholder="Digite sua senha" />
+        <input type="password" id="password" style={inputStyle} onChange={(e) => setPassword(e.target.value)} placeholder="Digite sua senha" />
       </div>
     </div>
   );
