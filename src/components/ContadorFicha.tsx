@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Imagem from "./Imagem";
 import BotaoCircular from "./BotaoCircular";
 import CaixaNumerica from "./CaixaNumerica";
@@ -12,6 +12,8 @@ interface ContadorFichaProps {
 }
 
 const ContadorFicha: React.FC<ContadorFichaProps> = ({ imagemSrc, numero }) => {
+  const [contador, setContador] = useState(numero);
+
   const estiloContador: React.CSSProperties = {
     display: "flex",
     alignItems: "center",
@@ -30,14 +32,24 @@ const ContadorFicha: React.FC<ContadorFichaProps> = ({ imagemSrc, numero }) => {
     border: "1px solid black",
   };
 
+  const incrementarNumero = () => {
+    setContador(contador + 1);
+  };
+
+  const decrementarNumero = () => {
+    if (contador > 0) {
+      setContador(contador - 1);
+    }
+  };
+
   return (
     <div style={estiloContador}>
       <Imagem src={imagemSrc} altura="79px" largura="79px" />
-      <BotaoCircular diametro="30px" imagemSrc={menos} aplicarBoxShadow={false} />
+      <BotaoCircular diametro="30px" imagemSrc={menos} aplicarBoxShadow={false} onClick={decrementarNumero} />
       <div style={estiloCaixaNumerica}>
-        <CaixaNumerica numero={numero} />
+        <CaixaNumerica numero={contador} />
       </div>
-      <BotaoCircular diametro="30px" imagemSrc={mais} aplicarBoxShadow={false} />
+      <BotaoCircular diametro="30px" imagemSrc={mais} aplicarBoxShadow={false} onClick={incrementarNumero} />
     </div>
   );
 };
