@@ -5,6 +5,7 @@ import Botao from "./Botao";
 import ImagensEmLinha from "./ImagensEmLinha";
 import Login from "./Login";
 import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { createNewUser } from "../database";
 
 import logoImage from "../imgs/logo.png";
 import ADPUCImage from "../imgs/ADPUC.png";
@@ -39,8 +40,8 @@ const SignupPage: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const HandleClick = () => {
-    navigate("/conquistas")
+  const HandleClick = (username: string, password: string) => {
+    //createNewUser(username, password);
   };
 
   return (
@@ -57,7 +58,7 @@ const SignupPage: React.FC = () => {
       <Espaco altura="50px" />
       <Botao
         texto="criar conta"
-        onClick={HandleClick}
+        onClick={() => HandleClick("Arthur", "@Senha123")}
         largura="287px"
         altura="50px"
         corTexto="black"
