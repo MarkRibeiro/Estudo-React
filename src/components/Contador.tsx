@@ -37,14 +37,10 @@ const Contador: React.FC<ContadorProps> = ({ imagemSrc, numero }) => {
     fontSize: "24px",
   };
 
-  const alterarNumero = () => {
-    setContadorNumero(contadorNumero + 1);
-  };
-
   return (
     <div style={contadorStyle}>
       <img src={imagemSrc} alt="Ícone" style={imagemStyle} />
-      <div style={circuloStyle} onClick={alterarNumero}>
+      <div style={circuloStyle}>
         <span style={numeroStyle}>{contadorNumero}</span>
       </div>
     </div>

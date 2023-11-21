@@ -6,7 +6,7 @@ interface CaixaNumericaProps {
 
 const CaixaNumerica: React.FC<CaixaNumericaProps> = ({ numero }) => {
   const estiloCaixa: React.CSSProperties = {
-    backgroundColor: "lightgray",
+    backgroundColor: "transparent",
     borderRadius: "8px",
     padding: "8px",
     textAlign: "center",
