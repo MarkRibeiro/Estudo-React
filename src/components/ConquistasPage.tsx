@@ -12,6 +12,7 @@ import Linha from "./Linha";
 import Porcentagem from "./Porcentagem";
 import { Link } from "react-router-dom";
 
+
 // Importe das imagens da pasta 'imgs/conquista'
 import p1 from "../imgs/conquista/1/pequeno.png";
 import g1 from "../imgs/conquista/1/grande.png";
