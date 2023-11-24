@@ -3,9 +3,10 @@ import React from "react";
 interface BotaoTransparenteProps {
   texto: string;
   ativado: boolean;
+  onClick?: () => void;
 }
 
-const BotaoTransparente: React.FC<BotaoTransparenteProps> = ({ texto, ativado }) => {
+const BotaoTransparente: React.FC<BotaoTransparenteProps> = ({ texto, ativado, onClick }) => {
   const estiloBotao = {
     width: "244px",
     height: "38px",
@@ -21,7 +22,7 @@ const BotaoTransparente: React.FC<BotaoTransparenteProps> = ({ texto, ativado })
   };
 
   return (
-    <button style={estiloBotao}>
+    <button style={estiloBotao} onClick={onClick}>
       {texto}
     </button>
   );

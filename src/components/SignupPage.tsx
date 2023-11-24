@@ -40,9 +40,13 @@ const SignupPage: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const HandleClick = (username: string, password: string) => {
-    //createNewUser(username, password);
+  const HandleClick = () => {
+    navigate("/conquistas");
   };
+
+  //const HandleClick = (username: string, password: string) => {
+    //createNewUser(username, password);
+  //};
 
   return (
     <div style={pageStyle}>
@@ -58,7 +62,8 @@ const SignupPage: React.FC = () => {
       <Espaco altura="50px" />
       <Botao
         texto="criar conta"
-        onClick={() => HandleClick("Arthur", "@Senha123")}
+        onClick={HandleClick}
+        //onClick={() => HandleClick("Arthur", "@Senha123")}
         largura="287px"
         altura="50px"
         corTexto="black"

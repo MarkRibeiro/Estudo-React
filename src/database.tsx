@@ -1,4 +1,3 @@
-import React from "react";
 import { MongoClient } from "mongodb";
 
 export type User = {
@@ -8,25 +7,29 @@ export type User = {
     achievements: [];
 }
 
-
 export const createNewUser = async (
     username: string,
     password: string
 ) => {
     const mongoClient = new MongoClient("mongodb+srv://admin:iAXHwgMZYq8YorYV@ssqjp.cjs6rgj.mongodb.net/mari_tcc?retryWrites=true&w=majority");
-    const data = await mongoClient.db().collection("users").findOne({ "name": username });
-    if (data != null) {
-        return;
-    }
-    else {
-        let achievements = []
-        for (let index = 0; index < 26; index++) {
-            achievements.push(false);
+
+    try {
+        await mongoClient.connect(); // Connect to MongoDB
+
+        const data = await mongoClient.db().collection("users").findOne({ "name": username });
+        if (data != null) {
+            // User already exists, handle accordingly
+            console.log("User already exists");
+        } else {
+            // User does not exist, create a new user
+            let achievements = [];
+            for (let index = 0; index < 26; index++) {
+                achievements.push(false);
+            }
+            await mongoClient.db().collection("users").insertOne({ "name": username, "password": password, "achievements": achievements });
+            console.log("User created successfully");
         }
-        await mongoClient.db().collection("users").insertOne({ "name": username, "password": password, "achievements": achievements })
+    } finally {
+        await mongoClient.close(); // Close the MongoDB connection
     }
 };
-
-// iAXHwgMZYq8YorYV
-
-// mongodb+srv://admin:iAXHwgMZYq8YorYV@ssqjp.cjs6rgj.mongodb.net/?retryWrites=true&w=majority

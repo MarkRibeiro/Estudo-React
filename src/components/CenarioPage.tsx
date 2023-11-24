@@ -235,6 +235,7 @@ const cenario = [
 const CenarioPage: React.FC = () => {
   const [mostrarCartas, setMostrarCartas] = useState(false);
   const [mostrarPergunta, setShowPergunta] = useState(true);
+  const [cartaSelecionada, setCartaSelecionada] = useState<number | null>(null);
 
   const backgroundStyle = {
     backgroundImage: `url(${cenario[id].fundo})`,
@@ -243,8 +244,8 @@ const CenarioPage: React.FC = () => {
     width: "100%",
     height: "100vh",
     display: "flex",
-    justifyContent: "center", // Centralize horizontalmente
-    alignItems: "center", // Centralize verticalmente
+    justifyContent: "center",
+    alignItems: "center",
     cursor: mostrarPergunta ? "pointer" : "default",
   };
 
@@ -261,10 +262,15 @@ const CenarioPage: React.FC = () => {
     }
   };
 
+  const handleCartaSelecionada = (index: number) => {
+    setCartaSelecionada(index);
+  };
+
   const handleBotaoCircularClick = () => {
     if (mostrarCartas) {
       setMostrarCartas(false);
-      setShowPergunta(true); // Ative a Pergunta quando o BotaoCircular for clicado
+      setShowPergunta(true);
+      setCartaSelecionada(null); // Limpar a seleção quando as cartas são ocultadas
     }
   };
 
@@ -273,7 +279,7 @@ const CenarioPage: React.FC = () => {
       style={backgroundStyle}
       onClick={mostrarPergunta ? handleTocarTela : undefined}
     >
-      {mostrarCartas ? ( // Renderize "Pergunta" se mostrarCartas for falso, senão, renderize "CartasEBotao"
+      {mostrarCartas ? (
         <CartasEBotao
           cartas={[
             { corBorda: roxa, texto: cenario[id].cartaRoxa },
@@ -284,8 +290,9 @@ const CenarioPage: React.FC = () => {
           ]}
           rotacao={90}
           textoBotao="confirmar escolha"
-          ativadoBotao={false}
+          ativadoBotao={cartaSelecionada !== null}
           onBotaoCircularClick={handleBotaoCircularClick}
+          onCartaClick={handleCartaSelecionada}
         />
       ) : (
         <Pergunta
